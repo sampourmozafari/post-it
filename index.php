@@ -10,9 +10,15 @@
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet">
   </head>
   <body>
+      <ul>
+        <li><a href="index.php">Tilføj post-it</a></li>
+        <li><a href="opslagstavle.php">Opslagstavle</a></li>
+      </ul>
       <div class="post_it_container">
         <div class="post_it">
           <?php
+
+          require_once('db_con.php');
 
           $cmd = filter_input(INPUT_POST, 'cmd');
           $date = filter_input(INPUT_POST, 'date');
@@ -20,31 +26,27 @@
           $content = filter_input(INPUT_POST, 'content');
           $author = filter_input(INPUT_POST, 'author');
 
-          if(empty($cmd)){
-          ?>
-          <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-	          <fieldset>
-		          <input type="date" name="date" placeholder="Vælg dato"><br>
-              <input type="text" name="author" placeholder="Tilføj forfatter"><br>
-		          <input type="text" name="headline" placeholder="Overskrift"><br>
-              <textarea name="content" placeholder="Skriv note"></textarea><br>
-		          <input type="submit" name="cmd" value="Tilføj">
-	          </fieldset>
-          </form>
-          <?php
-          }
-
-          else($cmd == 'Submit');{
-            require_once('db_con.php');
+          if($headline){
             $sql = ("INSERT INTO postit (date, headline, content, author) VALUES (?, ?, ?, ?)");
             $stmt = $con->prepare($sql);
             $stmt->bind_param('ssss', $date, $headline, $content, $author);
-			      $stmt->execute();
+            $stmt->execute();
+
+            echo "sucess";
 
             $stmt->close();
             $con->close();
           }
           ?>
+          <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+	          <fieldset>
+		          <input type="date" name="date" placeholder="Vælg dato" required><br>
+              <input type="text" name="author" placeholder="Tilføj forfatter" required maxlength="2 char"><br>
+		          <input type="text" name="headline" placeholder="Overskrift" required maxlength="35 char"><br>
+              <textarea name="content" placeholder="Skriv note" required maxlength="255 char"></textarea><br>
+		          <input type="submit" name="cmd" value="Tilføj">
+	          </fieldset>
+          </form>
         </div>
       </div>
   </body>
