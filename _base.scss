@@ -10,35 +10,45 @@ $yellow_accent: #ffbf00;
 body {
   height: 100vh;
   font-family: 'Gochi Hand', cursive;
+  background-color: $black5;
 }
 
 ul {
   list-style: none;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 4em;
+  background-color: $white;
   li {
-    margin: 2em;
+    margin: 2em 1em;
+    padding: 0.5em 1.5em;
     a {
       text-decoration: none;
       color: $black80;
-      font-size: 2em;
+      font-size: 1.3em;
       &:hover {
-        padding: 0.25em 0.5em;
-        background-color: $yellow_accent;
-        border-radius: 0.2em;
+        color: lighten($black80, 40%);
+      }
+      &:active {
       }
     }
   }
 }
 
+.divider {
+  width: 1px;
+  height: 2em;
+  background-color: $black10;
+}
+
 .post_it_container {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   .post_it {
-    width: 30em;
-    height: 30em;
+    width: 29em;
+    height: 29em;
     margin: 4em;
     padding: 2em;
     background-color: $yellow;

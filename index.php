@@ -12,6 +12,7 @@
   <body>
       <ul>
         <li><a href="index.php">Tilføj post-it</a></li>
+        <div class="divider"></div>
         <li><a href="opslagstavle.php">Opslagstavle</a></li>
       </ul>
       <div class="post_it_container">

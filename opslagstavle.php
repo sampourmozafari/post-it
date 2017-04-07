@@ -12,6 +12,7 @@
   <body>
     <ul>
       <li><a href="index.php">Tilføj post-it</a></li>
+      <div class="divider"></div>
       <li><a href="opslagstavle.php">Opslagstavle</a></li>
     </ul>
     <?php
@@ -29,10 +30,8 @@
       $stmt->bind_result($id, $date1, $headline1, $content1, $author1);
 
       while ($stmt->fetch()) {
-        echo "<div>$date1, $headline1, $content1, $author1</div>";
+        echo "<div class="layout">$date1, $headline1, $content1, $author1</div>";
       }
-
-
 
       $stmt->close();
       $con->close();
