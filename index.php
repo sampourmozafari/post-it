@@ -32,7 +32,7 @@
             $stmt->bind_param('ssss', $date, $headline, $content, $author);
             $stmt->execute();
 
-            echo "sucess";
+            echo "Din note er tilføjet";
 
             $stmt->close();
             $con->close();

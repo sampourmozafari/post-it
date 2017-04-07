@@ -9,6 +9,26 @@ $yellow_accent: #ffbf00;
 
 body {
   height: 100vh;
+  font-family: 'Gochi Hand', cursive;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  li {
+    margin: 2em;
+    a {
+      text-decoration: none;
+      color: $black80;
+      font-size: 2em;
+      &:hover {
+        padding: 0.25em 0.5em;
+        background-color: $yellow_accent;
+        border-radius: 0.2em;
+      }
+    }
+  }
 }
 
 .post_it_container {
@@ -90,4 +110,10 @@ form {
 :-moz-placeholder {
   color: $black80;
   opacity: 1;
+}
+
+.post_it_opslag {
+  width: 20em;
+  height: 20em;
+  background-color: $yellow;
 }

@@ -227,7 +227,23 @@ time, mark, audio, video {
     height: 0; } }
 
 body {
-  height: 100vh; }
+  height: 100vh;
+  font-family: 'Gochi Hand', cursive; }
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center; }
+  ul li {
+    margin: 2em; }
+    ul li a {
+      text-decoration: none;
+      color: #333333;
+      font-size: 2em; }
+      ul li a:hover {
+        padding: 0.25em 0.5em;
+        background-color: #ffbf00;
+        border-radius: 0.2em; }
 
 .post_it_container {
   height: 100%;
@@ -293,3 +309,8 @@ form fieldset {
 :-moz-placeholder {
   color: #333333;
   opacity: 1; }
+
+.post_it_opslag {
+  width: 20em;
+  height: 20em;
+  background-color: #ffd900; }
