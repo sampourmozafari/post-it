@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet">
   </head>
   <body>
-      <ul>
-        <li><a href="index.php">Tilføj post-it</a></li>
-        <div class="divider"></div>
-        <li><a href="opslagstavle.php">Opslagstavle</a></li>
-      </ul>
       <div class="post_it_container">
+        <ul>
+          <li><a href="index.php">Tilføj post-it</a></li>
+          <div class="divider"></div>
+          <li><a href="opslagstavle.php">Opslagstavlen</a></li>
+        </ul>
         <div class="post_it">
           <?php
 
